@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react"
 import { questions as originalQuestions } from "@/data/testQuestions"
-import Question from "./Question"
-import ChoiceButton from "./ChoiceButton"
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
+import { Card, CardContent } from '@/components/ui/card'
 
 function shuffleArray<T>(array: T[]): T[] {
   return [...array].sort(() => Math.random() - 0.5)
 }
 
 export default function Quiz() {
+  const [shuffledQuestions, setShuffledQuestions] = useState([])
   const [index, setIndex] = useState(0)
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null)
-  const [showResult, setShowResult] = useState(false)
+  const [hasGuessedWrong, setHasGuessedWrong] = useState(false)
   const [score, setScore] = useState(0)
   const [isAnswered, setIsAnswered] = useState(false)
-  const [shuffledQuestions, setShuffledQuestions] = useState([])
 
   useEffect(() => {
     const shuffled = shuffleArray(originalQuestions)
@@ -27,11 +26,24 @@ export default function Quiz() {
   const current = shuffledQuestions[index]
 
   const handleSubmit = () => {
-    if (!isAnswered && selectedChoice !== null) {
-      if (selectedChoice === current.answer) {
+    if (!selectedChoice) return
+
+    const isCorrect = selectedChoice === current.answer
+
+    if (isCorrect) {
+      if (!hasGuessedWrong) {
         setScore((prev) => prev + 1)
       }
       setIsAnswered(true)
+    } else {
+      setHasGuessedWrong(true)
+    }
+
+    if (!isAnswered && selectedChoice !== null) {
+      if (selectedChoice === current.answer) {
+        setIsAnswered(true)
+      }
+      
     } else {
       setIndex((prev) => prev + 1)
       setSelectedChoice(null)
@@ -39,10 +51,11 @@ export default function Quiz() {
     }
   }
 
-  const nextQuestion = () => {
-    setIndex(index + 1)
-    setSelected(null)
-    setShowResult(false)
+  const handleNext = () => {
+    setIndex((prev) => prev + 1)
+    setSelectedChoice(null)
+    setIsAnswered(false)
+    setHasGuessedWrong(false)
   }
 
   if (index >= shuffledQuestions.length) {
@@ -59,6 +72,7 @@ export default function Quiz() {
 
   return (
     <div className="space-y-4">
+      <div className="text-lg font-semibold">Score: {score}</div>
       <h2 className="text-xl font-semibold">{current.question}</h2>
       <div className="grid gap-2">
         {current.choices.map((choice, i) => (
@@ -71,13 +85,26 @@ export default function Quiz() {
           </Button>
         ))}
       </div>
-      <Button className="mt-4" onClick={handleSubmit} disabled={selectedChoice === null}>
-        {isAnswered ? "Next" : "Submit"}
-      </Button>
+
+      {!isAnswered ? (
+        <Button className="mt-4" onClick={handleSubmit} disabled={selectedChoice === null}>
+          Submit
+        </Button>
+      ) : (
+        <Button className="mt-4" onClick={handleNext}>
+          Next
+        </Button>
+      )}
+
+      {hasGuessedWrong && !isAnswered && (
+        <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
+      )}
+
       {isAnswered && (
-        <p className="mt-2">
-          {selectedChoice === current.answer ? "✅ Correct!" : `❌ Incorrect. Correct answer: ${current.answer}`}
-        </p>
+        <div className="mt-2 text-green-700">
+          ✅ Correct!
+          <p className="mt-1 text-sm text-gray-700">{current.feedback}</p>
+        </div>
       )}
     </div>
   )
