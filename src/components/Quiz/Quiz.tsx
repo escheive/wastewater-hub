@@ -10,7 +10,6 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Quiz() {
   const { quizId } = useParams()
-  console.log(quizId)
   const [quizTitle, setQuizTitle] = useState('')
   const [shuffledQuestions, setShuffledQuestions] = useState([])
   const [index, setIndex] = useState(0)
@@ -57,17 +56,6 @@ export default function Quiz() {
     } else {
       setHasGuessedWrong(true)
     }
-
-    if (!isAnswered && selectedChoice !== null) {
-      if (selectedChoice === current.answer) {
-        setIsAnswered(true)
-      }
-      
-    } else {
-      setIndex((prev) => prev + 1)
-      setSelectedChoice(null)
-      setIsAnswered(false)
-    }
   }
 
   const handleNext = () => {
@@ -80,6 +68,7 @@ export default function Quiz() {
   if (index >= shuffledQuestions.length) {
     return (
       <div className="text-center mt-10 space-y-4">
+        <h2 className="text-2xl font-bold">{quizTitle}</h2>
         <h2 className="text-2xl font-bold">Your Score: {score} / {shuffledQuestions.length}</h2>
         <div className="flex justify-center gap-4">
           <Button asChild><Link to="/quiz">Retake Quiz</Link></Button>
@@ -91,12 +80,14 @@ export default function Quiz() {
 
   return (
     <div className="space-y-4">
+      <h2 className="text-2xl font-bold">{quizTitle || ''}</h2>
       <div className="text-lg font-semibold">Score: {score}</div>
       <h2 className="text-xl font-semibold">{current.question}</h2>
       <div className="grid gap-2">
         {current.choices.map((choice, i) => (
           <Button
             key={i}
+            className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
             variant={selectedChoice === choice ? "default" : "outline"}
             onClick={() => setSelectedChoice(choice)}
           >
@@ -105,15 +96,13 @@ export default function Quiz() {
         ))}
       </div>
 
-      {!isAnswered ? (
-        <Button className="mt-4" onClick={handleSubmit} disabled={selectedChoice === null}>
-          Submit
-        </Button>
-      ) : (
-        <Button className="mt-4" onClick={handleNext}>
-          Next
-        </Button>
-      )}
+      <Button 
+        className={`mt-4 bg-green-600 text-black hover:bg-green-700 disabled:opacity-50`}
+        onClick={!isAnswered ? handleSubmit : handleNext} 
+        disabled={selectedChoice === null}
+      >
+        {!isAnswered ? 'Submit' : 'Next'}
+      </Button>
 
       {hasGuessedWrong && !isAnswered && (
         <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
