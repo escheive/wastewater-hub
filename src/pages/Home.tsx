@@ -1,10 +1,14 @@
-import Quiz from "@/components/Quiz/Quiz"
+import { Link } from "react-router-dom"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
-    <main className="p-4">
-      <h1 className="text-3xl font-bold mb-6">Practice Quiz</h1>
-      <Quiz />
+    <main className="flex flex-col items-center justify-center min-h-screen gap-4">
+      <h1 className="text-4xl font-bold">Welcome to the Quiz App</h1>
+      <p className="text-gray-600">Test your knowledge by taking a quick quiz.</p>
+      <Button asChild>
+        <Link to="/quiz">Start Quiz</Link>
+      </Button>
     </main>
   )
 }

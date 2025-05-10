@@ -3,7 +3,7 @@ import { questions } from "@/data/testQuestions"
 import Question from "./Question"
 import ChoiceButton from "./ChoiceButton"
 import { Button } from "@/components/ui/button"
-import React from "react"
+import { Link } from 'react-router-dom'
 
 export default function Quiz() {
   const [index, setIndex] = useState(0)
@@ -26,8 +26,16 @@ export default function Quiz() {
 
   if (index >= questions.length) {
     return (
-      <div className="text-center mt-10">
+      <div className="text-center mt-10 space-y-4">
         <h2 className="text-2xl font-bold">Your Score: {score} / {questions.length}</h2>
+        <div className="flex justify-center gap-4">
+          <Button asChild>
+            <Link to="/quiz">Retake Quiz</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link to="/">Back to Home</Link>
+          </Button>
+        </div>
       </div>
     )
   }
