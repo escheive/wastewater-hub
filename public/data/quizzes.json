@@ -1,0 +1,36 @@
+{
+  "quiz1": {
+    "title": "Math Quiz",
+    "questions": [
+      {
+        "question": "What is 2+2?",
+        "choices": ["3", "4", "5"],
+        "answer": "4",
+        "feedback": "2+2 equals 4."
+      },
+      {
+        "question": "What is 3+3?",
+        "choices": ["5", "6", "7"],
+        "answer": "6",
+        "feedback": "3+3 equals 6."
+      }
+    ]
+  },
+  "quiz2": {
+    "title": "Geography Quiz",
+    "questions": [
+      {
+        "question": "What is the capital of France?",
+        "choices": ["Berlin", "Madrid", "Paris"],
+        "answer": "Paris",
+        "feedback": "Paris is the capital of France."
+      },
+      {
+        "question": "What is the capital of Germany?",
+        "choices": ["Berlin", "Rome", "Madrid"],
+        "answer": "Berlin",
+        "feedback": "Berlin is the capital of Germany."
+      }
+    ]
+  }
+}

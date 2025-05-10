@@ -11,7 +11,7 @@ export default function NavBar() {
           <Link to="/">Home</Link>
         </Button>
         <Button asChild variant="ghost">
-          <Link to="/quiz">Take Quiz</Link>
+          <Link to="/quizzes">Quizzes</Link>
         </Button>
       </div>
     </nav>
