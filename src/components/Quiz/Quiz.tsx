@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Card, CardContent } from '@/components/ui/card'
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -10,6 +10,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Quiz() {
   const { quizId } = useParams()
+  const navigate = useNavigate()
   const [quizTitle, setQuizTitle] = useState('')
   const [shuffledQuestions, setShuffledQuestions] = useState([])
   const [index, setIndex] = useState(0)
@@ -17,6 +18,10 @@ export default function Quiz() {
   const [hasGuessedWrong, setHasGuessedWrong] = useState(false)
   const [score, setScore] = useState(0)
   const [isAnswered, setIsAnswered] = useState(false)
+  const [answers, setAnswers] = useState<
+    { question: string; selected: string; correct: string; feedback: string }[]
+  >([])
+
 
   useEffect(() => {
     const loadQuizData = async () => {
@@ -52,6 +57,16 @@ export default function Quiz() {
       if (!hasGuessedWrong) {
         setScore((prev) => prev + 1)
       }
+
+      setAnswers(prev => [
+        ...prev,
+        {
+          question: current.question,
+          selected: selectedChoice!,
+          correct: current.answer,
+          feedback: current.feedback,
+        }
+      ])
       setIsAnswered(true)
     } else {
       setHasGuessedWrong(true)
@@ -71,8 +86,20 @@ export default function Quiz() {
         <h2 className="text-2xl font-bold">{quizTitle}</h2>
         <h2 className="text-2xl font-bold">Your Score: {score} / {shuffledQuestions.length}</h2>
         <div className="flex justify-center gap-4">
-          <Button asChild><Link to="/quiz">Retake Quiz</Link></Button>
+          <Button asChild><Link to={`/quiz/${quizId}`}>Retake Quiz</Link></Button>
           <Button asChild variant="outline"><Link to="/">Home</Link></Button>
+          <Button asChild>
+            <Link 
+              to='/quiz/summary'
+              state={{
+                answers,
+                score,
+                total: shuffledQuestions.length,
+              }}
+            >
+              Summary
+            </Link>
+          </Button>
         </div>
       </div>
     )
