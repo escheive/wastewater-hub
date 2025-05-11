@@ -73,6 +73,13 @@ export default function Quiz() {
     }
   }
 
+  const handlePrev = () => {
+    setIndex((prev) => prev - 1)
+    setSelectedChoice(null)
+    setIsAnswered(false)
+    setHasGuessedWrong(false)
+  }
+
   const handleNext = () => {
     setIndex((prev) => prev + 1)
     setSelectedChoice(null)
@@ -135,12 +142,49 @@ export default function Quiz() {
         <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
       )}
 
-      {isAnswered && (
+      {/* Show correct feedback if this question was answered correctly */}
+      {(answers[index] && answers[index].selected === answers[index].correct) && (
+        <div className="mt-2 text-green-700">
+          ✅ Correct!
+          <p className="mt-1 text-sm text-gray-700">{answers[index].feedback}</p>
+        </div>
+      )}
+
+      {/* Show incorrect feedback if answered incorrectly */}
+      {(answers[index] && answers[index].selected !== answers[index].correct) && (
+        <div className="mt-2 text-red-600">
+          ❌ Incorrect!
+          <p className="mt-1 text-sm text-gray-700">{answers[index].feedback}</p>
+        </div>
+      )}
+
+      {/* {hasGuessedWrong && !isAnswered || answers[index] && !answers[index].correct && (
+        <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
+      )}
+
+      {isAnswered || answers[index] && answers[index].correct && (
         <div className="mt-2 text-green-700">
           ✅ Correct!
           <p className="mt-1 text-sm text-gray-700">{current.feedback}</p>
         </div>
-      )}
+      )} */}
+
+      <div className="flex justify-between mt-4">
+        <Button 
+          onClick={handlePrev} disabled={index === 0}
+          className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
+        >
+          Previous
+        </Button>
+
+        <Button 
+          onClick={handleNext}
+          disabled={index === shuffledQuestions.length - 1}
+          className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
+        >
+          Next
+        </Button>
+      </div>
     </div>
   )
 }
