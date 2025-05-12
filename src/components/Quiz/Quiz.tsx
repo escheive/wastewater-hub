@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
-type Choice = {
-  id: string
-  text: string
-}
+type Choice = { id: string, text: string }
 
-type Question = {
-  question: string
-  answerId: string
-  feedback: string
-  choices: Choice[]
-}
+type Question = {question: string, answerId: string, feedback: string, choices: Choice[] }
 
 function shuffleArray<T>(array: T[]): T[] {
   return [...array].sort(() => Math.random() - 0.5)
@@ -28,6 +19,7 @@ export default function Quiz() {
   const [hasGuessedWrong, setHasGuessedWrong] = useState(false)
   const [score, setScore] = useState(0)
   const [isAnswered, setIsAnswered] = useState(false)
+  const [isCorrect, setIsCorrect] = useState(false)
   const [answers, setAnswers] = useState<
     { question: string; selected: string; correct: string; feedback: string }[]
   >([])
@@ -37,8 +29,8 @@ export default function Quiz() {
       try {
         const response = await fetch(`/data/quizzes.json`)
         const quizzes = await response.json()
-
         const quizData = quizId ? quizzes[quizId] : null
+
         if (quizData) {
           setQuizTitle(quizData.title)
           setShuffledQuestions(shuffleArray(quizData.questions))
@@ -53,19 +45,18 @@ export default function Quiz() {
     loadQuizData()
   }, [quizId])
 
-  if (shuffledQuestions.length === 0) return null
   const currentQuestion = shuffledQuestions[index]
+  if (!currentQuestion) return null
 
+  const alreadyAnswered = answers.some(a => a.question === currentQuestion.question)
+  
   const handleSubmit = () => {
-    if (!selectedChoice) return
+    if (!selectedChoice || isAnswered) return
 
     const isCorrect = selectedChoice === currentQuestion.answerId
+    setIsCorrect(isCorrect)
 
-    if (isCorrect) {
-      if (!hasGuessedWrong) {
-        setScore((prev) => prev + 1)
-      }
-
+    if (!alreadyAnswered) {
       setAnswers(prev => [
         ...prev,
         {
@@ -75,36 +66,32 @@ export default function Quiz() {
           feedback: currentQuestion.feedback,
         }
       ])
+    }
+    
+
+    if (isCorrect) {
+      if (!hasGuessedWrong) {
+        setScore((prev) => prev + 1)
+      }
       setIsAnswered(true)
     } else {
       setHasGuessedWrong(true)
     }
   }
 
-  const handlePrev = () => {
-    setIndex((prev) => {
-      const newIndex = prev - 1
-      const prevAnswer = answers[newIndex]
-  
-      setSelectedChoice(prevAnswer ? prevAnswer.selected : null)
-      setIsAnswered(!!prevAnswer)
-      setHasGuessedWrong(false)
-  
-      return newIndex
-    })
-  }
+  const handleNav = (newIndex: number) => {
+    const navAnswer = answers[newIndex]
+    setIndex(newIndex)
+    setSelectedChoice(navAnswer?.selected ?? null)
+    setIsAnswered(!!navAnswer)
 
-  const handleNext = () => {
-    setIndex((prev) => {
-      const newIndex = prev + 1
-      const nextAnswer = answers[newIndex]
-  
-      setSelectedChoice(nextAnswer ? nextAnswer.selected : null)
-      setIsAnswered(!!nextAnswer)
+    if (navAnswer) {
+      setIsCorrect(navAnswer.selected === navAnswer.correct)
+      setHasGuessedWrong(navAnswer.selected !== navAnswer.correct)
+    } else {
+      setIsCorrect(false)
       setHasGuessedWrong(false)
-  
-      return newIndex
-    })
+    }
   }
 
   if (index >= shuffledQuestions.length) {
@@ -135,32 +122,32 @@ export default function Quiz() {
   return (
     <div className="flex gap-6">
       {/* Legend Sidebar */}
-      <div className="w-48 space-y-2">
+      <div className="justify-center fixed left-0 top-16 bottom-16 w-56 space-y-2 overflow-y-auto bg-white p-4">
         {shuffledQuestions.map((_, qIndex) => {
-          const isAnswered = answers[qIndex] !== undefined;
+          const answer = answers[qIndex]
+          const gotItRight = answer && answer.selected === answer.correct
+          const gotItWrong = answer && answer.selected !== answer.correct
+
           return (
             <Button
               key={qIndex}
               variant="outline"
-              className={`w-full justify-start text-sm ${
-                index === qIndex ? 'border-blue-500 font-semibold' : ''
-              } ${isAnswered ? 'bg-green-100' : 'bg-gray-100'}`}
-              onClick={() => {
-                setIndex(qIndex);
-                const qAnswer = answers[qIndex];
-                setSelectedChoice(qAnswer?.selected ?? null);
-                setIsAnswered(!!qAnswer);
-                setHasGuessedWrong(false);
-              }}
+              className={`w-full justify-start text-sm
+                ${!answer ? '!bg-gray-100' : ''}
+                ${gotItRight ? '!bg-green-100' : ''}
+                ${gotItWrong ? '!bg-red-100' : ''}
+                ${index === qIndex ? '!border-blue-500 !font-semibold' : ''}       
+              `}
+              onClick={() => handleNav(qIndex)}
             >
-              Q{qIndex + 1} {isAnswered ? '✔️' : ''}
+              Q{qIndex + 1} {answers[qIndex] ? '✔️' : ''}
             </Button>
           );
         })}
       </div>
 
       {/* Quiz Content */}
-      <div className="flex-1 space-y-4">
+      <div className="flex-1 ml-56 p-4 pt-16 pb-16">
         <h2 className="text-2xl font-bold">{quizTitle || ''}</h2>
         <p className="text-sm text-gray-600 mb-2">
           Question {index + 1} of {shuffledQuestions?.length}
@@ -169,21 +156,18 @@ export default function Quiz() {
         <h2 className="text-xl font-semibold">{currentQuestion.question}</h2>
         <div className="grid gap-2">
           {currentQuestion.choices.map((choice, i) => {
-            // Check if question has already been answered
-            const isAnswered = answers[index] !== undefined;
-            const wasAnsweredCorrectly = isAnswered && answers[index]?.selected === choice.id && answers[index]?.selected === answers[index]?.correct;
-
-            console.log(i, isAnswered)
-            console.log(i, wasAnsweredCorrectly)
+            const navAnswer = answers[index]
+            const isIncorrectSelected = navAnswer && choice.id === navAnswer.selected && navAnswer.selected !== navAnswer.correct
 
             return (
               <Button
-                key={i}
-                className={`
-                  mt-1 text-black border-2
-                  
+                key={choice.id}
+                className={`mt-1 text-black border-2
+                  ${isAnswered && choice.id === navAnswer.correct ? '!bg-green-100' : ''}
+                  ${isIncorrectSelected ? '!bg-red-100' : ''}
                 `}
-                onClick={() => !isAnswered && setSelectedChoice(choice.id)} // Only allow selection if not answered
+                onClick={() => !isAnswered && setSelectedChoice(choice.id)}
+                disabled={isAnswered}
               >
                 {choice.text}
               </Button>
@@ -194,46 +178,43 @@ export default function Quiz() {
         <Button 
           className={`mt-4 bg-green-600 text-black hover:bg-green-700 disabled:opacity-50`}
           onClick={handleSubmit} 
-          disabled={selectedChoice === null || isAnswered}
+          disabled={!selectedChoice || isAnswered}
         >
           Submit
         </Button>
 
-        {hasGuessedWrong && !isAnswered && (
-          <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
-        )}
-
-        {/* Show correct feedback if this question was answered correctly */}
-        {(answers[index] && answers[index].selected === answers[index].correct) && (
+        {isCorrect && (
           <div className="mt-2 text-green-700">
             ✅ Correct!
-            <p className="mt-1 text-sm text-gray-700">{answers[index].feedback}</p>
           </div>
         )}
 
-        {/* Show incorrect feedback if answered incorrectly */}
-        {(answers[index] && answers[index].selected !== answers[index].correct) && (
+        {!isCorrect && hasGuessedWrong && (
           <div className="mt-2 text-red-600">
             ❌ Incorrect!
-            <p className="mt-1 text-sm text-gray-700">{answers[index].feedback}</p>
           </div>
+        )}
+
+        {isAnswered && (
+          <p className="mt-1 text-sm text-gray-700">{currentQuestion.feedback}</p>
         )}
 
         <div className="flex justify-between mt-4">
           <Button 
-            onClick={handlePrev} disabled={index === 0}
-            className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
-          >
-            Previous
-          </Button>
+              onClick={() => handleNav(index - 1)} 
+              disabled={index === 0}
+              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+            >
+              Previous
+            </Button>
 
-          <Button 
-            onClick={handleNext}
-            disabled={index === shuffledQuestions.length - 1}
-            className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
-          >
-            Next
-          </Button>
+            <Button 
+              onClick={() => handleNav(index + 1)}
+              disabled={index === shuffledQuestions.length - 1}
+              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+            >
+              Next
+            </Button>
         </div>
       </div>
     </div>
