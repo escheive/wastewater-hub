@@ -155,7 +155,7 @@ export default function Quiz() {
         <div className="text-lg font-semibold">Score: {score}</div>
         <h2 className="text-xl font-semibold">{currentQuestion.question}</h2>
         <div className="grid gap-2">
-          {currentQuestion.choices.map((choice, i) => {
+          {currentQuestion.choices.map((choice) => {
             const navAnswer = answers[index]
             const isIncorrectSelected = navAnswer && choice.id === navAnswer.selected && navAnswer.selected !== navAnswer.correct
 
