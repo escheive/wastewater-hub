@@ -15,7 +15,7 @@ export default function QuizSummary() {
       <p className="text-lg">Score: {score} / {total}</p>
 
       <div className="space-y-4">
-        {answers.map((a, i) => (
+        {answers.map((a: any, i: any) => (
           <div key={i} className="border p-4 rounded">
             <p><strong>Q:</strong> {a.question}</p>
             <p><strong>Your answer:</strong> {a.selected}</p>

@@ -1,7 +1,19 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+
+type Choice = {
+  id: string
+  text: string
+}
+
+type Question = {
+  question: string
+  answerId: string
+  feedback: string
+  choices: Choice[]
+}
 
 function shuffleArray<T>(array: T[]): T[] {
   return [...array].sort(() => Math.random() - 0.5)
@@ -9,9 +21,8 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Quiz() {
   const { quizId } = useParams()
-  const navigate = useNavigate()
   const [quizTitle, setQuizTitle] = useState('')
-  const [shuffledQuestions, setShuffledQuestions] = useState([])
+  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([])
   const [index, setIndex] = useState(0)
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null)
   const [hasGuessedWrong, setHasGuessedWrong] = useState(false)
@@ -27,7 +38,7 @@ export default function Quiz() {
         const response = await fetch(`/data/quizzes.json`)
         const quizzes = await response.json()
 
-        const quizData = quizzes[quizId]
+        const quizData = quizId ? quizzes[quizId] : null
         if (quizData) {
           setQuizTitle(quizData.title)
           setShuffledQuestions(shuffleArray(quizData.questions))
@@ -127,16 +138,32 @@ export default function Quiz() {
       <div className="text-lg font-semibold">Score: {score}</div>
       <h2 className="text-xl font-semibold">{currentQuestion.question}</h2>
       <div className="grid gap-2">
-        {currentQuestion.choices.map((choice, i) => (
-          <Button
-            key={i}
-            className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
-            variant={selectedChoice === choice.id ? "default" : "outline"}
-            onClick={() => setSelectedChoice(choice.id)}
-          >
-            {choice.text}
-          </Button>
-        ))}
+        {currentQuestion.choices.map((choice, i) => {
+          // Check if question has already been answered
+          const isAnswered = answers[index] !== undefined;
+          const wasAnsweredCorrectly = isAnswered && answers[index]?.selected === choice.id && answers[index]?.selected === answers[index]?.correct;
+
+          console.log(i, isAnswered)
+          console.log(i, wasAnsweredCorrectly)
+
+          return (
+            <Button
+              key={i}
+              className={`
+                mt-1 text-black border-2
+                ${isAnswered
+                  ? 'disabled cursor-not-allowed bg-gray-300' : '' } ${wasAnsweredCorrectly ? 'bg-green-500 disabled:bg-green-500' : 'disabled:bg-red-500'}
+                  : 'disabled bg-green-600 hover:bg-green-700'}
+                ${selectedChoice === choice.id
+                  ? ' border-blue-500 bg-blue-500' // Highlight selected answer
+                  : ''} // No highlight for other choices
+              `}
+              onClick={() => !isAnswered && setSelectedChoice(choice.id)} // Only allow selection if not answered
+            >
+              {choice.text}
+            </Button>
+          )
+        })}
       </div>
 
       <Button 
