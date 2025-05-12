@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="flex flex-col min-h-screen min-w-screen">
       <NavBar />
-      <main className="p-6 max-w-2xl mx-auto">
+      <main className="flex-grow p-6 max-w-2xl mx-auto">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/quizzes' element={<QuizSelection />} />
