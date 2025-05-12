@@ -135,6 +135,9 @@ export default function Quiz() {
   return (
     <div className="space-y-4">
       <h2 className="text-2xl font-bold">{quizTitle || ''}</h2>
+      <p className="text-sm text-gray-600 mb-2">
+        Question {index + 1} of {shuffledQuestions?.length}
+      </p>
       <div className="text-lg font-semibold">Score: {score}</div>
       <h2 className="text-xl font-semibold">{currentQuestion.question}</h2>
       <div className="grid gap-2">
@@ -151,12 +154,7 @@ export default function Quiz() {
               key={i}
               className={`
                 mt-1 text-black border-2
-                ${isAnswered
-                  ? 'disabled cursor-not-allowed bg-gray-300' : '' } ${wasAnsweredCorrectly ? 'bg-green-500 disabled:bg-green-500' : 'disabled:bg-red-500'}
-                  : 'disabled bg-green-600 hover:bg-green-700'}
-                ${selectedChoice === choice.id
-                  ? ' border-blue-500 bg-blue-500' // Highlight selected answer
-                  : ''} // No highlight for other choices
+                
               `}
               onClick={() => !isAnswered && setSelectedChoice(choice.id)} // Only allow selection if not answered
             >
@@ -168,10 +166,10 @@ export default function Quiz() {
 
       <Button 
         className={`mt-4 bg-green-600 text-black hover:bg-green-700 disabled:opacity-50`}
-        onClick={!isAnswered ? handleSubmit : handleNext} 
-        disabled={selectedChoice === null}
+        onClick={handleSubmit} 
+        disabled={selectedChoice === null || isAnswered}
       >
-        {!isAnswered ? 'Submit' : 'Next'}
+        Submit
       </Button>
 
       {hasGuessedWrong && !isAnswered && (
