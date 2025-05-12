@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Link } from 'react-router-dom'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Card, CardContent } from '@/components/ui/card'
 
 function shuffleArray<T>(array: T[]): T[] {
   return [...array].sort(() => Math.random() - 0.5)
@@ -21,7 +20,6 @@ export default function Quiz() {
   const [answers, setAnswers] = useState<
     { question: string; selected: string; correct: string; feedback: string }[]
   >([])
-
 
   useEffect(() => {
     const loadQuizData = async () => {
@@ -45,13 +43,12 @@ export default function Quiz() {
   }, [quizId])
 
   if (shuffledQuestions.length === 0) return null
-
-  const current = shuffledQuestions[index]
+  const currentQuestion = shuffledQuestions[index]
 
   const handleSubmit = () => {
     if (!selectedChoice) return
 
-    const isCorrect = selectedChoice === current.answer
+    const isCorrect = selectedChoice === currentQuestion.answerId
 
     if (isCorrect) {
       if (!hasGuessedWrong) {
@@ -61,10 +58,10 @@ export default function Quiz() {
       setAnswers(prev => [
         ...prev,
         {
-          question: current.question,
+          question: currentQuestion.question,
           selected: selectedChoice!,
-          correct: current.answer,
-          feedback: current.feedback,
+          correct: currentQuestion.answerId,
+          feedback: currentQuestion.feedback,
         }
       ])
       setIsAnswered(true)
@@ -74,17 +71,29 @@ export default function Quiz() {
   }
 
   const handlePrev = () => {
-    setIndex((prev) => prev - 1)
-    setSelectedChoice(null)
-    setIsAnswered(false)
-    setHasGuessedWrong(false)
+    setIndex((prev) => {
+      const newIndex = prev - 1
+      const prevAnswer = answers[newIndex]
+  
+      setSelectedChoice(prevAnswer ? prevAnswer.selected : null)
+      setIsAnswered(!!prevAnswer)
+      setHasGuessedWrong(false)
+  
+      return newIndex
+    })
   }
 
   const handleNext = () => {
-    setIndex((prev) => prev + 1)
-    setSelectedChoice(null)
-    setIsAnswered(false)
-    setHasGuessedWrong(false)
+    setIndex((prev) => {
+      const newIndex = prev + 1
+      const nextAnswer = answers[newIndex]
+  
+      setSelectedChoice(nextAnswer ? nextAnswer.selected : null)
+      setIsAnswered(!!nextAnswer)
+      setHasGuessedWrong(false)
+  
+      return newIndex
+    })
   }
 
   if (index >= shuffledQuestions.length) {
@@ -116,16 +125,16 @@ export default function Quiz() {
     <div className="space-y-4">
       <h2 className="text-2xl font-bold">{quizTitle || ''}</h2>
       <div className="text-lg font-semibold">Score: {score}</div>
-      <h2 className="text-xl font-semibold">{current.question}</h2>
+      <h2 className="text-xl font-semibold">{currentQuestion.question}</h2>
       <div className="grid gap-2">
-        {current.choices.map((choice, i) => (
+        {currentQuestion.choices.map((choice, i) => (
           <Button
             key={i}
             className={`mt-1 bg-green-600 text-black hover:bg-green-700`}
-            variant={selectedChoice === choice ? "default" : "outline"}
-            onClick={() => setSelectedChoice(choice)}
+            variant={selectedChoice === choice.id ? "default" : "outline"}
+            onClick={() => setSelectedChoice(choice.id)}
           >
-            {choice}
+            {choice.text}
           </Button>
         ))}
       </div>
@@ -157,17 +166,6 @@ export default function Quiz() {
           <p className="mt-1 text-sm text-gray-700">{answers[index].feedback}</p>
         </div>
       )}
-
-      {/* {hasGuessedWrong && !isAnswered || answers[index] && !answers[index].correct && (
-        <p className="mt-2 text-red-600">❌ Incorrect. Try again.</p>
-      )}
-
-      {isAnswered || answers[index] && answers[index].correct && (
-        <div className="mt-2 text-green-700">
-          ✅ Correct!
-          <p className="mt-1 text-sm text-gray-700">{current.feedback}</p>
-        </div>
-      )} */}
 
       <div className="flex justify-between mt-4">
         <Button 
