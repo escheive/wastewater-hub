@@ -22,6 +22,7 @@ export default function Quiz() {
   const [score, setScore] = useState(0)
   const [isAnswered, setIsAnswered] = useState(false)
   const [isCorrect, setIsCorrect] = useState(false)
+  const [showFinalModal, setShowFinalModal] = useState(false)
   const [answers, setAnswers] = useState<
     { question: string; selected: string; correct: string; feedback: string }[]
   >([])
@@ -93,6 +94,10 @@ export default function Quiz() {
       setIsCorrect(false)
       setHasGuessedWrong(false)
     }
+  }
+
+  const handleFinishQuiz = () => {
+    setShowFinalModal(true)
   }
 
   if (index >= shuffledQuestions.length) {
@@ -216,8 +221,41 @@ export default function Quiz() {
             >
               Next
             </Button>
+
+            <Button
+              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+              onClick={handleFinishQuiz}
+            >
+              Finish Quiz
+            </Button>
         </div>
       </div>
+
+      {showFinalModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white p-6 rounded-lg shadow-xl text-center space-y-4 max-w-sm w-full">
+            <h2 className="text-2xl font-bold">{quizTitle}</h2>
+            <p className="text-xl">Your Score: {score} / {shuffledQuestions.length}</p>
+            <div className="flex flex-col gap-2">
+              <Button asChild className="!text-black bg-white" variant="outline">
+                <Link to="/">Home</Link>
+              </Button>
+              <Button asChild className="!text-black bg-white" variant="outline">
+                <Link 
+                  to="/quiz/summary"
+                  state={{
+                    answers,
+                    score,
+                    total: shuffledQuestions.length,
+                  }}
+                >
+                  Summary
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

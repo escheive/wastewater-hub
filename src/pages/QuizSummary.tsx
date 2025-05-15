@@ -25,8 +25,8 @@ export default function QuizSummary() {
         ))}
       </div>
 
-      <Button asChild className="mt-6"><Link to="/">Return Home</Link></Button>
-      <Button asChild className="mt-6"><Link to="/quizzes">Return To Quizzes</Link></Button>
+      <Button asChild className="mt-1 bg-gray-200 !text-black hover:bg-gray-400"><Link to="/">Return Home</Link></Button>
+      <Button asChild className="mt-1 bg-gray-200 !text-black hover:bg-gray-400"><Link to="/quizzes">Return To Quizzes</Link></Button>
     </div>
   )
 }
