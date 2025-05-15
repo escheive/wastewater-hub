@@ -13,7 +13,6 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Quiz() {
   const { quizId } = useParams()
-  const [quizData, setQuizData] = useState(null)
   const [quizTitle, setQuizTitle] = useState('')
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([])
   const [index, setIndex] = useState(0)
@@ -31,7 +30,6 @@ export default function Quiz() {
     const loadQuizData = async () => {
       try {
         const data = await loadQuiz(quizId)
-        setQuizData(data)
 
         if (data) {
           setQuizTitle(data.title)
