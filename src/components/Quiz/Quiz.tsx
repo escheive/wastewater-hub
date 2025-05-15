@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Link, useParams } from 'react-router-dom'
+import { loadQuiz } from "@/utils/quizLoader"
 
 type Choice = { id: string, text: string }
 
@@ -12,6 +13,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function Quiz() {
   const { quizId } = useParams()
+  const [quizData, setQuizData] = useState(null)
   const [quizTitle, setQuizTitle] = useState('')
   const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([])
   const [index, setIndex] = useState(0)
@@ -27,13 +29,12 @@ export default function Quiz() {
   useEffect(() => {
     const loadQuizData = async () => {
       try {
-        const response = await fetch(`/data/quizzes.json`)
-        const quizzes = await response.json()
-        const quizData = quizId ? quizzes[quizId] : null
+        const data = await loadQuiz(quizId)
+        setQuizData(data)
 
-        if (quizData) {
-          setQuizTitle(quizData.title)
-          setShuffledQuestions(shuffleArray(quizData.questions))
+        if (data) {
+          setQuizTitle(data.title)
+          setShuffledQuestions(shuffleArray(data.questions))
         } else {
           console.error(`Quiz with id ${quizId} not found`)
         }

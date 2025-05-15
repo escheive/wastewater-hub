@@ -1,0 +1,653 @@
+{
+  "title": "Wastewater 1",
+  "questions": [
+    {
+      "id": 1,
+      "question": "How does nitrification affect the alkalinity of wastewater?",
+      "choices": [
+        { "id": "a", "text": "Alkalinity increases" }, 
+        { "id": "b", "text": "Alkalinity decreases" }, 
+        { "id": "c", "text": "Alkalinity is not affected by nitrification" }, 
+        { "id": "d", "text": "Alkalinity levels out during the denitrification process" }
+      ],
+      "answerId": "b",
+      "feedback": "Nitrification consumes alkalinity at a rate of 7.2 lbs per lb of ammonia converted. Remember: nitrification consumes alkalinity, denitrification increases alkalinity."
+    },
+    {
+      "id": 2,
+      "question": "What does ppm stand for?",
+      "choices": [
+        { "id": "a", "text": "Pints per mL" }, 
+        { "id": "b", "text": "Phosphorous(g) per mL" }, 
+        { "id": "c", "text": "Parts per million" }, 
+        { "id": "d", "text": "Price per month" }
+      ],
+      "answerId": "c",
+      "feedback": "Ppm is parts per million. It is one of anything compared to a million of the same thing. It is used synonymously to mg/L"
+    },
+    {
+      "id": 3,
+      "question": "What typ of pond has an aerobic and an anaerobic layer?",
+      "choices": [
+        { "id": "a", "text": "Facultative" }, 
+        { "id": "b", "text": "Digestion" }, 
+        { "id": "c", "text": "Fermentation" }, 
+        { "id": "d", "text": "Full aeration" }
+      ],
+      "answerId": "a",
+      "feedback": "Algae creates aerobic conditions at the top, the pond is deep enough where the sludge on the bottom has a higher demand for oxygen than the algae can supply."
+    },
+    {
+      "id": 4,
+      "question": "How does temperature affect microbial activity?",
+      "choices": [
+        { "id": "a", "text": "Activity increase as temperature increases" }, 
+        { "id": "b", "text": "Activity decreases as temperature increases" }, 
+        { "id": "c", "text": "Activity is negligibly affected by temperature" }, 
+        { "id": "d", "text": "Most microorganisms are resistant to temperature changes" }
+      ],
+      "answerId": "a",
+      "feedback": "Microorganisms will become more active as temperature increases, to a point. A rule of thumb is that every 10º C, activity doubles. Eventually temperatures will start killing bugs."
+    },
+    {
+      "id": 5,
+      "question": "What happens to digester pH if CO2 is trapped in the digester sludge?",
+      "choices": [
+        { "id": "a", "text": "pH increases" }, 
+        { "id": "b", "text": "pH decreases" }, 
+        { "id": "c", "text": "CO2 has no effect on pH" }, 
+        { "id": "d", "text": "Alkalinity is affected" }
+      ],
+      "answerId": "b",
+      "feedback": "CO2 is acidic, so it decreases pH."
+    },
+    {
+      "id": 6,
+      "question": "What process typically follows aeration in wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Secondary Clarification" }, 
+        { "id": "b", "text": "Tertiary Treatment" }, 
+        { "id": "c", "text": "Disinfection" }, 
+        { "id": "d", "text": "Trickling Filter Treatment" }
+      ],
+      "answerId": "a",
+      "feedback": "Secondary clarification is to settle the solids created during the activated sludge process. A second round of sedimentation will take place after aeration typically to settle any additional solids."
+    },
+    {
+      "id": 7,
+      "question": "What should be done if there is an excessive amount of small pin floc in the secondary clarifier?",
+      "choices": [
+        { "id": "a", "text": "Decrease RAS" }, 
+        { "id": "b", "text": "Increase RAS" }, 
+        { "id": "c", "text": "Decrease WAS" }, 
+        { "id": "d", "text": "Increase WAS" }
+      ],
+      "answerId": "d",
+      "feedback": "Small pin floc typically result from old sludge age. Decreasing SRT will result in younger sludge and should correct the problem."
+    },
+    {
+      "id": 8,
+      "question": "What should be done when solids or gases are rising in a primary clarifier?",
+      "choices": [
+        { "id": "a", "text": "Increase sludge withdrawal rate" }, 
+        { "id": "b", "text": "Decrease sludge withdrawal rate" }, 
+        { "id": "c", "text": "Temporarily decrease influent flow" }, 
+        { "id": "d", "text": "Nothing can be done, this is the result of a toxic load" }
+      ],
+      "answerId": "a",
+      "feedback": "Typically rising gas or solids indicate a septic condition."
+    },
+    {
+      "id": 9,
+      "question": "What is the first valve after the discharge of a pump?",
+      "choices": [
+        { "id": "a", "text": "Ball valve" }, 
+        { "id": "b", "text": "Check valve" }, 
+        { "id": "c", "text": "Gate valve" }, 
+        { "id": "d", "text": "Butterfly valve" }
+      ],
+      "answerId": "b",
+      "feedback": "Check valves are located after a pump to prevent backflow when the pump is not in use."
+    },
+    {
+      "id": 10,
+      "question": "How does lime affect pH and alkalinity?",
+      "choices": [
+        { "id": "a", "text": "Lime does not affect pH or alkalinity" }, 
+        { "id": "b", "text": "pH decreases, alkalinity increases" }, 
+        { "id": "c", "text": "pH increases, alkalinity increases" }, 
+        { "id": "d", "text": "pH increases, alkalinity decreases" }
+      ],
+      "answerId": "c",
+      "feedback": "Lime is an alkali which means it will increase both the pH and alkalinity when added."
+    },
+    {
+      "id": 11,
+      "question": "How does increasing recirculation rate in a trickling filter affect DO?",
+      "choices": [
+        { "id": "a", "text": "It does not affect DO" }, 
+        { "id": "b", "text": "The effect on DO depends on microorganism population on the media" }, 
+        { "id": "c", "text": "It decreases DO" }, 
+        { "id": "d", "text": "It increases DO" }
+      ],
+      "answerId": "d",
+      "feedback": "DO is added to the water as it splashes through the media of the trickling filter. Increases recirculation will allow for more splashing through the media, increasing the DO."
+    },
+    {
+      "id": 12,
+      "question": "What is the term for the pores of a belt being plugged?",
+      "choices": [
+        { "id": "a", "text": "Blinding" }, 
+        { "id": "b", "text": "Bulking" }, 
+        { "id": "c", "text": "Clogging" }, 
+        { "id": "d", "text": "Plugging" }
+      ],
+      "answerId": "a",
+      "feedback": "The pores are 'blinded' to the water. Typically plugged by sludge or polymer."
+    },
+    {
+      "id": 13,
+      "question": "When using ammonia to detect a Chlorine leak, what color will the smoke be?",
+      "choices": [
+        { "id": "a", "text": "Green" }, 
+        { "id": "b", "text": "White" }, 
+        { "id": "c", "text": "Yellow" }, 
+        { "id": "d", "text": "Orange" }
+      ],
+      "answerId": "b",
+      "feedback": "Ammonia reacts with Chlorine, creating Ammonium Hydrochloride which typically is seen as white."
+    },
+    {
+      "id": 14,
+      "question": "What adjustment should be made if streaks of sludge are present on a Gravity Belt Thickener (GBT)?",
+      "choices": [
+        { "id": "a", "text": "Reduce the polymer dosing" }, 
+        { "id": "b", "text": "Reduce the speed of the belt" }, 
+        { "id": "c", "text": "Clean the washbox nozzles" }, 
+        { "id": "d", "text": "Increase the polymer dosing" }
+      ],
+      "answerId": "c",
+      "feedback": "The washbox nozzles clean the belt and streaks are an indication of low pressure of plugged nozzles."
+    },
+    {
+      "id": 15,
+      "question": "What is the class B biosolid fecal coliform limit?",
+      "choices": [
+        { "id": "a", "text": "1,000 #/g TS" }, 
+        { "id": "b", "text": "2,000 #/g TS" }, 
+        { "id": "c", "text": "1,000,000 #/g TS" }, 
+        { "id": "d", "text": "2,000,000 #/g TS" }
+      ],
+      "answerId": "d",
+      "feedback": "Class A fecal coliform limit is 1,000, class B is 2,000,000 #/g TS."
+    },
+    {
+      "id": 16,
+      "question": "What is the term for a single sample collected at a specific location and time?",
+      "choices": [
+        { "id": "a", "text": "Grab" }, 
+        { "id": "b", "text": "Composite" }, 
+        { "id": "c", "text": "Field" }, 
+        { "id": "d", "text": "Representative" }
+      ],
+      "answerId": "a",
+      "feedback": "Grab samples are grabbed or collected, typically manually."
+    },
+    {
+      "id": 17,
+      "question": "What is the term for a single sample made by combining multiple individual samples taken at different times or location?",
+      "choices": [
+        { "id": "a", "text": "Grab" }, 
+        { "id": "b", "text": "Composite" }, 
+        { "id": "c", "text": "Field" }, 
+        { "id": "d", "text": "Representative" }
+      ],
+      "answerId": "b",
+      "feedback": "Composite samples are meant to be more representative of the entire area being sampled, accounting for variations over time and in different sections of the area."
+    },
+    {
+      "id": 18,
+      "question": "How long is incubation for a BOD test?",
+      "choices": [
+        { "id": "a", "text": "12 hours" }, 
+        { "id": "b", "text": "48 hours" }, 
+        { "id": "c", "text": "5 days" }, 
+        { "id": "d", "text": "24 hours" }
+      ],
+      "answerId": "c",
+      "feedback": "BOD samples are incubated for 5 days at 20º C"
+    },
+    {
+      "id": 19,
+      "question": "What does Hydrogen Sulfide smell like at low concentrations?",
+      "choices": [
+        { "id": "a", "text": "No smell" }, 
+        { "id": "b", "text": "Musty" }, 
+        { "id": "c", "text": "Sour" }, 
+        { "id": "d", "text": "Rotten eggs" }
+      ],
+      "answerId": "d",
+      "feedback": "Hydrogen Sulfide deadens the olfactory senses, but when it is in a low concentration it will smell like rotten eggs."
+    },
+    {
+      "id": 20,
+      "question": "What does Hydrogen Sulfide smell like at high concentrations?",
+      "choices": [
+        { "id": "a", "text": "No smell" }, 
+        { "id": "b", "text": "Musty" }, 
+        { "id": "c", "text": "Sour" }, 
+        { "id": "d", "text": "Rotten eggs" }
+      ],
+      "answerId": "a",
+      "feedback": "Hydrogen Sulfide deadens the olfactory senses, when it is in high concentrations you will not be able to smell it."
+    },
+    {
+      "id": 21,
+      "question": "What should be done if there are rising solids and smelly gases in the secondary clarifier?",
+      "choices": [
+        { "id": "a", "text": "Decrease DO in aeration" }, 
+        { "id": "b", "text": "Increase DO in aeration" }, 
+        { "id": "c", "text": "Decrease the RAS rate" }, 
+        { "id": "d", "text": "Decrease the WAS rate" }
+      ],
+      "answerId": "b",
+      "feedback": "Gas bubbles typically indicate a septic condition which can indicate an oxygen deficiency."
+    },
+    {
+      "id": 22,
+      "question": "What is infilitration in wastewater?",
+      "choices": [
+        { "id": "a", "text": "Rain falling into the uncovered tanks of a treatment plant" }, 
+        { "id": "b", "text": "Toxic loads entering the wastewater flow" }, 
+        { "id": "c", "text": "Water seeping into sanitary sewer lines" }, 
+        { "id": "d", "text": "Sludge making it through the sedimentation process" }
+      ],
+      "answerId": "c",
+      "feedback": "Infiltration is typically water entering the sewer system through cracks in pipes."
+    },
+    {
+      "id": 23,
+      "question": "What is the difference between anaerobic and anoxic?",
+      "choices": [
+        { "id": "a", "text": "Anaerobic is no oxygen whatsoever, Anoxic is no free oxygen available" }, 
+        { "id": "b", "text": "Anaerobic is free oxygen available, Anoxic is no oxygen whatsoever" }, 
+        { "id": "c", "text": "Anaerobic is no free oxygen, Anoxic is free oxygen available" }, 
+        { "id": "d", "text": "Anaerobic is no free oxygen present, Anoxic is no oxygen available whatsoever" }
+      ],
+      "answerId": "d",
+      "feedback": "Aerobic is free oxygen available, think DO. Anaerobic is no free dissolved oxygen, but there is oxygen readily available in the compounds present in the wastewater, think Nitrite, Nitrate, Carbon Dioxide. Anoxic is all the oxygen is tied up and not readily available for use."
+    },
+    {
+      "id": 24,
+      "question": "Which test is best to use for anaerobic digestion control?",
+      "choices": [
+        { "id": "a", "text": "Acid/Alkalinity" }, 
+        { "id": "b", "text": "pH" }, 
+        { "id": "c", "text": "Total Suspended Solids" }, 
+        { "id": "d", "text": "Total Dissolved Solids" }
+      ],
+      "answerId": "a",
+      "feedback": "pH tests will show change too late, Alkalinity and acidity will reflect changes much sooner and allow adjustments before a digester is upset."
+    },
+    {
+      "id": 25,
+      "question": "What is a typical DO range for aerobic digestion?",
+      "choices": [
+        { "id": "a", "text": "0.1 to 0.5 mg/L" }, 
+        { "id": "b", "text": "1.0 to 2.0 mg/L" }, 
+        { "id": "c", "text": "2.0 to 4.0 mg/L" }, 
+        { "id": "d", "text": "4.0 to 8.0 mg/L" }
+      ],
+      "answerId": "b",
+      "feedback": "Typicall at least 0.5 mg/L is required, but a range of 1.0 to 2.0 mg/L is the typical range. Anything more is fine but a waste of energy."
+    },
+    {
+      "id": 26,
+      "question": "What is a bubbler typically used for?",
+      "choices": [
+        { "id": "a", "text": "Measure flow" }, 
+        { "id": "b", "text": "Control aeration" }, 
+        { "id": "c", "text": "Level control" }, 
+        { "id": "d", "text": "DO measurements" }
+      ],
+      "answerId": "c",
+      "feedback": "Bubblers measure tank and wet well levels through backpressure. The water column exerts a pressure against the air supplied through a tube and that balance will allow you to calculate the level."
+    },
+    {
+      "id": 27,
+      "question": "What method should be used to control flies in a trickling filter?",
+      "choices": [
+        { "id": "a", "text": "Decreasing the recirculation rate" }, 
+        { "id": "b", "text": "Adding lime to the filter" }, 
+        { "id": "c", "text": "Create sloughing in the filter" }, 
+        { "id": "d", "text": "Flood the filter" }
+      ],
+      "answerId": "d",
+      "feedback": "Flies like damp environments but cannot live in water or a flooded environment."
+    },
+    {
+      "id": 28,
+      "question": "What is the formula for Chlorine Dosage?",
+      "choices": [
+        { "id": "a", "text": "Dose = Residual + Demand" }, 
+        { "id": "b", "text": "Dose = Residual - Demand" }, 
+        { "id": "c", "text": "Dose = Residual x Demand" }, 
+        { "id": "d", "text": "Dose = Residual / Demand" }
+      ],
+      "answerId": "a",
+      "feedback": "Dosage should meet the Chlorine demand of the water being treated plus enough to meet the residual requirements. Residual is typically proof that enough Chlorine was added to meet the demand of the water."
+    },
+    {
+      "id": 29,
+      "question": "What does the term breakpoint refer to with Chlorine?",
+      "choices": [
+        { "id": "a", "text": "The state after demand and residual requirements have been met" }, 
+        { "id": "b", "text": "The state after the demand has been met" }, 
+        { "id": "c", "text": "The state where Chlorine and pH are balanced in the optimal zones" }, 
+        { "id": "d", "text": "The state where Chlorine is starting to be consumed by compounds in the wastewater" }
+      ],
+      "answerId": "b",
+      "feedback": "Breakpoint refers to demand being met and Chlorine dosage starts creating Chlorine residual."
+    },
+    {
+      "id": 30,
+      "question": "What is the standard temperature for the drying oven during a TSS test?",
+      "choices": [
+        { "id": "a", "text": "25 to 30º C" }, 
+        { "id": "b", "text": "98 to 100º C" }, 
+        { "id": "c", "text": "103 to 105º C" }, 
+        { "id": "d", "text": "55 to 60º C" }
+      ],
+      "answerId": "c",
+      "feedback": "The oven should be kept between 103 and 105 C"
+    },
+    {
+      "id": 31,
+      "question": "What color foam typically indicates old sludge?",
+      "choices": [
+        { "id": "a", "text": "White and stiff" }, 
+        { "id": "b", "text": "Light brown and musty" }, 
+        { "id": "c", "text": "Dark grey" }, 
+        { "id": "d", "text": "Black" }
+      ],
+      "answerId": "d",
+      "feedback": "Black foam is an indication of very old sludge"
+    },
+    {
+      "id": 32,
+      "question": "What color foam typically indicates young sludge?",
+      "choices": [
+        { "id": "a", "text": "White and stiff" }, 
+        { "id": "b", "text": "Light brown and musty" }, 
+        { "id": "c", "text": "Dark brown and musty" }, 
+        { "id": "d", "text": "Black" }
+      ],
+      "answerId": "a",
+      "feedback": "A general rule of thumb is that the darker the foam, the older the sludge."
+    },
+    {
+      "id": 33,
+      "question": "What is the term for Ammonia-N and organic-N?",
+      "choices": [
+        { "id": "a", "text": "TN" }, 
+        { "id": "b", "text": "TKN" }, 
+        { "id": "c", "text": "AON" }, 
+        { "id": "d", "text": "NKN" }
+      ],
+      "answerId": "b",
+      "feedback": "Total Kjeldahl Nitrogen."
+    },
+    {
+      "id": 34,
+      "question": "What is F/M and what does it measure?",
+      "choices": [
+        { "id": "a", "text": "Flow to microorganism ratio" }, 
+        { "id": "b", "text": "Feed to matter ratio" }, 
+        { "id": "c", "text": "Food to microorganism ratio" }, 
+        { "id": "d", "text": "Flow to mass ratio" }
+      ],
+      "answerId": "c",
+      "feedback": "F/M measures the amount of biodegradabe (BOD) relative to the microbial biomass in a treatment system."
+    },
+    {
+      "id": 35,
+      "question": "What is the primary goal of wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Remove water from solids" },
+        { "id": "b", "text": "Add chemicals to water" },
+        { "id": "c", "text": "Remove pollutants and pathogens from wastewater" },
+        { "id": "d", "text": "Increase water temperature" }
+      ],
+      "answerId": "c",
+      "feedback": "The main goal of wastewater treatment is to remove contaminants, including pollutants and pathogens, to protect public health and the environment."
+    },
+    {
+      "id": 36,
+      "question": "What does BOD stand for?",
+      "choices": [
+        { "id": "a", "text": "Biological Organic Demand" },
+        { "id": "b", "text": "Biochemical Oxygen Demand" },
+        { "id": "c", "text": "Biological Oxidation Demand" },
+        { "id": "d", "text": "Basic Oxygen Demand" }
+      ],
+      "answerId": "b",
+      "feedback": "BOD stands for Biochemical Oxygen Demand, which measures the amount of oxygen used by microorganisms to break down organic matter in water."
+    },
+    {
+      "id": 37,
+      "question": "What process is typically used in secondary wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Screening" },
+        { "id": "b", "text": "Sedimentation" },
+        { "id": "c", "text": "Biological treatment using microorganisms" },
+        { "id": "d", "text": "Chlorination" }
+      ],
+      "answerId": "c",
+      "feedback": "Secondary treatment usually involves biological processes where microorganisms consume organic matter in the wastewater."
+    },
+    {
+      "id": 38,
+      "question": "What is the purpose of primary treatment?",
+      "choices": [
+        { "id": "a", "text": "Kill bacteria" },
+        { "id": "b", "text": "Remove large solids and settleable material" },
+        { "id": "c", "text": "Add nutrients" },
+        { "id": "d", "text": "Remove heavy metals" }
+      ],
+      "answerId": "b",
+      "feedback": "Primary treatment focuses on removing suspended solids by physical settling and skimming."
+    },
+    {
+      "id": 39,
+      "question": "Which gas is commonly produced in anaerobic digesters?",
+      "choices": [
+        { "id": "a", "text": "Oxygen" },
+        { "id": "b", "text": "Methane" },
+        { "id": "c", "text": "Nitrogen" },
+        { "id": "d", "text": "Carbon monoxide" }
+      ],
+      "answerId": "b",
+      "feedback": "Anaerobic digesters produce methane as a byproduct of organic material breakdown in the absence of oxygen."
+    },
+    {
+      "id": 40,
+      "question": "What is sludge?",
+      "choices": [
+        { "id": "a", "text": "Clean water" },
+        { "id": "b", "text": "Sand and grit" },
+        { "id": "c", "text": "Solid waste byproduct from wastewater treatment" },
+        { "id": "d", "text": "Chlorinated water" }
+      ],
+      "answerId": "c",
+      "feedback": "Sludge is the solid waste byproduct collected from settling tanks and biological processes in wastewater treatment."
+    },
+    {
+      "id": 41,
+      "question": "What does TSS stand for in wastewater analysis?",
+      "choices": [
+        { "id": "a", "text": "Total Solvent Solids" },
+        { "id": "b", "text": "Total Suspended Solids" },
+        { "id": "c", "text": "Total Sanitary Solids" },
+        { "id": "d", "text": "Treated Sewage Sludge" }
+      ],
+      "answerId": "b",
+      "feedback": "TSS refers to Total Suspended Solids, which are particles suspended in water that can be trapped by a filter."
+    },
+    {
+      "id": 42,
+      "question": "What is a clarifier used for?",
+      "choices": [
+        { "id": "a", "text": "Heating water" },
+        { "id": "b", "text": "Filtering odors" },
+        { "id": "c", "text": "Settling out solids from water" },
+        { "id": "d", "text": "Adding oxygen to water" }
+      ],
+      "answerId": "c",
+      "feedback": "Clarifiers are tanks designed to allow solids to settle out of the water by gravity."
+    },
+    {
+      "id": 43,
+      "question": "What is the purpose of aeration in wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Remove sludge" },
+        { "id": "b", "text": "Add nutrients" },
+        { "id": "c", "text": "Promote microbial activity by adding oxygen" },
+        { "id": "d", "text": "Settle out heavy particles" }
+      ],
+      "answerId": "c",
+      "feedback": "Aeration supplies oxygen to microorganisms that consume organic matter in wastewater."
+    },
+    {
+      "id": 44,
+      "question": "What does pH measure in water?",
+      "choices": [
+        { "id": "a", "text": "Temperature" },
+        { "id": "b", "text": "Alkalinity only" },
+        { "id": "c", "text": "Acidity and alkalinity" },
+        { "id": "d", "text": "Turbidity" }
+      ],
+      "answerId": "c",
+      "feedback": "pH measures how acidic or basic a substance is on a scale of 0 to 14."
+    },
+    {
+      "id": 45,
+      "question": "What is the main function of a grit chamber in a wastewater treatment plant?",
+      "choices": [
+        { "id": "a", "text": "Remove pathogens" },
+        { "id": "b", "text": "Settle out heavy inorganic solids like sand and gravel" },
+        { "id": "c", "text": "Add chemicals to neutralize pH" },
+        { "id": "d", "text": "Aerate the water" }
+      ],
+      "answerId": "b",
+      "feedback": "Grit chambers are used to remove heavy, abrasive particles like sand and gravel to protect downstream equipment."
+    },
+    {
+      "id": 46,
+      "question": "What does MLSS stand for?",
+      "choices": [
+        { "id": "a", "text": "Mixed Liquor Suspended Solids" },
+        { "id": "b", "text": "Maximum Load Suspended Solids" },
+        { "id": "c", "text": "Main Line Sewage Solids" },
+        { "id": "d", "text": "Mechanical Liquid Sediment System" }
+      ],
+      "answerId": "a",
+      "feedback": "MLSS stands for Mixed Liquor Suspended Solids and represents the concentration of suspended solids in the aeration basin."
+    },
+    {
+      "id": 47,
+      "question": "Which type of bacteria thrives in an environment without oxygen?",
+      "choices": [
+        { "id": "a", "text": "Aerobic bacteria" },
+        { "id": "b", "text": "Anaerobic bacteria" },
+        { "id": "c", "text": "Photosynthetic bacteria" },
+        { "id": "d", "text": "Thermophilic bacteria" }
+      ],
+      "answerId": "b",
+      "feedback": "Anaerobic bacteria grow in environments without oxygen and are used in processes like anaerobic digestion."
+    },
+    {
+      "id": 48,
+      "question": "Which of the following is a common disinfection method in wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Aeration" },
+        { "id": "b", "text": "Filtration" },
+        { "id": "c", "text": "UV light" },
+        { "id": "d", "text": "Coagulation" }
+      ],
+      "answerId": "c",
+      "feedback": "UV light is often used in the final disinfection step to kill or inactivate pathogens in treated wastewater."
+    },
+    {
+      "id": 49,
+      "question": "What does COD stand for in wastewater analysis?",
+      "choices": [
+        { "id": "a", "text": "Chemical Oxygen Demand" },
+        { "id": "b", "text": "Carbonate Oxidation Degree" },
+        { "id": "c", "text": "Combined Oxygen Data" },
+        { "id": "d", "text": "Critical Oxidation Demand" }
+      ],
+      "answerId": "a",
+      "feedback": "COD (Chemical Oxygen Demand) measures the total quantity of oxygen required to oxidize all organic material in water."
+    },
+    {
+      "id": 50,
+      "question": "What is the primary purpose of tertiary treatment?",
+      "choices": [
+        { "id": "a", "text": "Settle large solids" },
+        { "id": "b", "text": "Add nutrients" },
+        { "id": "c", "text": "Further polish water to remove remaining contaminants" },
+        { "id": "d", "text": "Disinfect sludge" }
+      ],
+      "answerId": "c",
+      "feedback": "Tertiary treatment improves water quality by removing nutrients, fine solids, and pathogens beyond primary and secondary treatment."
+    },
+    {
+      "id": 51,
+      "question": "Which nutrient is commonly removed in advanced wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Iron" },
+        { "id": "b", "text": "Potassium" },
+        { "id": "c", "text": "Nitrogen" },
+        { "id": "d", "text": "Carbon dioxide" }
+      ],
+      "answerId": "c",
+      "feedback": "Nitrogen (and phosphorus) are typically removed during advanced treatment to prevent eutrophication in receiving waters."
+    },
+    {
+      "id": 52,
+      "question": "What is a weir used for in a clarifier?",
+      "choices": [
+        { "id": "a", "text": "Mix chemicals" },
+        { "id": "b", "text": "Direct and measure flow" },
+        { "id": "c", "text": "Introduce air" },
+        { "id": "d", "text": "Settle out solids" }
+      ],
+      "answerId": "b",
+      "feedback": "Weirs help evenly distribute flow and control water levels in clarifiers."
+    },
+    {
+      "id": 53,
+      "question": "What is the typical pH range of treated effluent?",
+      "choices": [
+        { "id": "a", "text": "2.0 to 4.0" },
+        { "id": "b", "text": "5.0 to 6.0" },
+        { "id": "c", "text": "6.5 to 8.5" },
+        { "id": "d", "text": "9.0 to 11.0" }
+      ],
+      "answerId": "c",
+      "feedback": "The typical pH range for treated wastewater is between 6.5 and 8.5 to comply with discharge permits."
+    },
+    {
+      "id": 54,
+      "question": "Which piece of equipment is used to thicken sludge?",
+      "choices": [
+        { "id": "a", "text": "Grit chamber" },
+        { "id": "b", "text": "Sludge thickener" },
+        { "id": "c", "text": "Aeration tank" },
+        { "id": "d", "text": "UV reactor" }
+      ],
+      "answerId": "b",
+      "feedback": "A sludge thickener is used to increase the solids concentration in sludge before further treatment or disposal."
+    }
+  ]
+}

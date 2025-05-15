@@ -1,0 +1,365 @@
+{
+  "title": "Wastewater Acronyms",
+  "questions": [
+    {
+      "id": 1,
+      "question": "What does TSS stand for?",
+      "choices": [
+        { "id": "a", "text": "Total Solids Suspended" },
+        { "id": "b", "text": "Treated Sewage Sludge" },
+        { "id": "c", "text": "Total Suspended Solids" },
+        { "id": "d", "text": "Thermal Solids Separation" }
+      ],
+      "answerId": "c",
+      "feedback": "TSS stands for Total Suspended Solids, which are particles suspended in water that can be trapped by a filter."
+    },
+    {
+      "id": 2,
+      "question": "What does BOD stand for?",
+      "choices": [
+        { "id": "a", "text": "Biological Organic Demand" },
+        { "id": "b", "text": "Biological Oxidation Demand" },
+        { "id": "c", "text": "Biochemical Oxygen Demand" },
+        { "id": "d", "text": "Basic Oxygen Demand" }
+      ],
+      "answerId": "c",
+      "feedback": "BOD stands for Biochemical Oxygen Demand, which measures the oxygen required by microorganisms to break down organic matter."
+    },
+    {
+      "id": 3,
+      "question": "What does F/M stand for?",
+      "choices": [
+        { "id": "a", "text": "Feed to Mass ratio" },
+        { "id": "b", "text": "Flow to Microorganism ratio" },
+        { "id": "c", "text": "Food to Microorganism ratio" },
+        { "id": "d", "text": "Flow to Mass ratio" }
+      ],
+      "answerId": "c",
+      "feedback": "F/M is the Food to Microorganism ratio, which helps determine the loading rate of organic material in activated sludge systems."
+    },
+    {
+      "id": 4,
+      "question": "What does MLSS stand for?",
+      "choices": [
+        { "id": "a", "text": "Maximum Load Solids Suspension" },
+        { "id": "b", "text": "Mixed Liquor Solids Sample" },
+        { "id": "c", "text": "Mixed Liquor Suspended Solids" },
+        { "id": "d", "text": "Mechanical Load Settling Solids" }
+      ],
+      "answerId": "c",
+      "feedback": "MLSS stands for Mixed Liquor Suspended Solids, which refers to the concentration of suspended solids in the aeration tank."
+    },
+    {
+      "id": 5,
+      "question": "What does RAS stand for?",
+      "choices": [
+        { "id": "a", "text": "Returned Activated Sludge" },
+        { "id": "b", "text": "Recirculated Aerated Solids" },
+        { "id": "c", "text": "Reclaimed Activated Solids" },
+        { "id": "d", "text": "Returned Aerated Sludge" }
+      ],
+      "answerId": "a",
+      "feedback": "RAS stands for Returned Activated Sludge, which is the settled activated sludge that is returned to the aeration tank."
+    },
+    {
+      "id": 6,
+      "question": "What does WAS stand for?",
+      "choices": [
+        { "id": "a", "text": "Waste Aerobic Solids" },
+        { "id": "b", "text": "Waste Activated Sludge" },
+        { "id": "c", "text": "Waterborne Anaerobic Sludge" },
+        { "id": "d", "text": "Water Activated Solids" }
+      ],
+      "answerId": "b",
+      "feedback": "WAS stands for Waste Activated Sludge, which is the excess biomass removed from the treatment process."
+    },
+    {
+      "id": 7,
+      "question": "What does SVI stand for?",
+      "choices": [
+        { "id": "a", "text": "Sludge Volume Index" },
+        { "id": "b", "text": "Solids Volume Indicator" },
+        { "id": "c", "text": "Suspended Volume Index" },
+        { "id": "d", "text": "Sludge Volatility Indicator" }
+      ],
+      "answerId": "a",
+      "feedback": "SVI stands for Sludge Volume Index, which indicates the settling characteristics of activated sludge."
+    },
+    {
+      "id": 8,
+      "question": "What does VSS stand for?",
+      "choices": [
+        { "id": "a", "text": "Volatile Solids Suspended" },
+        { "id": "b", "text": "Volatile Suspended Solids" },
+        { "id": "c", "text": "Variable Solids Suspended" },
+        { "id": "d", "text": "Volatile Solids Settled" }
+      ],
+      "answerId": "b",
+      "feedback": "VSS stands for Volatile Suspended Solids, which are organic particles in water that can volatilize at high temperatures."
+    },
+    {
+      "id": 9,
+      "question": "What does TKN stand for?",
+      "choices": [
+        { "id": "a", "text": "Total Known Nitrogen" },
+        { "id": "b", "text": "Total Kinetic Nitrogen" },
+        { "id": "c", "text": "Total Kjeldahl Nitrogen" },
+        { "id": "d", "text": "Total Kinetics and Nitrates" }
+      ],
+      "answerId": "c",
+      "feedback": "TKN stands for Total Kjeldahl Nitrogen, which is the total concentration of organic nitrogen and ammonia in a sample."
+    },
+    {
+      "id": 10,
+      "question": "What does DO stand for?",
+      "choices": [
+        { "id": "a", "text": "Dissolved Oxygen" },
+        { "id": "b", "text": "Daily Output" },
+        { "id": "c", "text": "Decomposed Organics" },
+        { "id": "d", "text": "Dispersed Oxides" }
+      ],
+      "answerId": "a",
+      "feedback": "DO stands for Dissolved Oxygen, which is the amount of oxygen available in water for aquatic organisms and treatment processes."
+    },
+    {
+      "id": 11,
+      "question": "What does COD stand for?",
+      "choices": [
+        { "id": "a", "text": "Chemical Organic Demand" },
+        { "id": "b", "text": "Chemical Oxidation Demand" },
+        { "id": "c", "text": "Chemical Oxygen Demand" },
+        { "id": "d", "text": "Carbonate Oxygen Demand" }
+      ],
+      "answerId": "c",
+      "feedback": "COD stands for Chemical Oxygen Demand, a measure of the amount of oxygen required to chemically oxidize organic compounds in water."
+    },
+    {
+      "id": 12,
+      "question": "What does SCADA stand for?",
+      "choices": [
+        { "id": "a", "text": "Supervisory Control and Data Acquisition" },
+        { "id": "b", "text": "System Control and Distribution Analysis" },
+        { "id": "c", "text": "Sanitary Control and Data Assessment" },
+        { "id": "d", "text": "Standard Control and Disposal Automation" }
+      ],
+      "answerId": "a",
+      "feedback": "SCADA stands for Supervisory Control and Data Acquisition, a system used for remote monitoring and control in wastewater facilities."
+    },
+    {
+      "id": 13,
+      "question": "What does SRT stand for?",
+      "choices": [
+        { "id": "a", "text": "Solids Retention Time" },
+        { "id": "b", "text": "Sludge Reaction Time" },
+        { "id": "c", "text": "System Return Time" },
+        { "id": "d", "text": "Sludge Recirculation Time" }
+      ],
+      "answerId": "a",
+      "feedback": "SRT stands for Solids Retention Time, the average time solids remain in the treatment system."
+    },
+    {
+      "id": 14,
+      "question": "What does NTU stand for?",
+      "choices": [
+        { "id": "a", "text": "Nutrient Transport Unit" },
+        { "id": "b", "text": "Nephelometric Turbidity Units" },
+        { "id": "c", "text": "Non-Treated Units" },
+        { "id": "d", "text": "Nitrate Turbidity Units" }
+      ],
+      "answerId": "b",
+      "feedback": "NTU stands for Nephelometric Turbidity Units, a measurement of water clarity based on light scattering."
+    },
+    {
+      "id": 15,
+      "question": "What does VSR stand for?",
+      "choices": [
+        { "id": "a", "text": "Volatile Sludge Ratio" },
+        { "id": "b", "text": "Volume Solids Recovery" },
+        { "id": "c", "text": "Volatile Solids Reduction" },
+        { "id": "d", "text": "Viscous Sludge Retention" }
+      ],
+      "answerId": "c",
+      "feedback": "VSR stands for Volatile Solids Reduction, a measure of organic solids degradation in sludge digestion."
+    },
+    {
+      "id": 16,
+      "question": "What does UV stand for in disinfection?",
+      "choices": [
+        { "id": "a", "text": "Universal Vacuum" },
+        { "id": "b", "text": "Ultraviolet" },
+        { "id": "c", "text": "Underflow Velocity" },
+        { "id": "d", "text": "Unit Volume" }
+      ],
+      "answerId": "b",
+      "feedback": "UV stands for Ultraviolet, a disinfection method that uses UV light to inactivate microorganisms in wastewater."
+    },
+    {
+      "id": 17,
+      "question": "What does EQ stand for in wastewater treatment?",
+      "choices": [
+        { "id": "a", "text": "Effluent Quality" },
+        { "id": "b", "text": "Equalization" },
+        { "id": "c", "text": "Equipment Quarantine" },
+        { "id": "d", "text": "Environmental Qualification" }
+      ],
+      "answerId": "b",
+      "feedback": "EQ stands for Equalization, which refers to balancing flow or loading in a treatment process to improve performance."
+    },
+    {
+      "id": 18,
+      "question": "What does HRT stand for?",
+      "choices": [
+        { "id": "a", "text": "Hydraulic Recycle Time" },
+        { "id": "b", "text": "Hydraulic Retention Time" },
+        { "id": "c", "text": "High Rate Treatment" },
+        { "id": "d", "text": "Heat Retention Transfer" }
+      ],
+      "answerId": "b",
+      "feedback": "HRT stands for Hydraulic Retention Time, which is the average time that wastewater remains in a treatment tank."
+    },
+    {
+      "id": 19,
+      "question": "What does THM stand for?",
+      "choices": [
+        { "id": "a", "text": "Total Hardness Measurement" },
+        { "id": "b", "text": "Total Head Monitoring" },
+        { "id": "c", "text": "Trihalomethanes" },
+        { "id": "d", "text": "Thermal Heat Management" }
+      ],
+      "answerId": "c",
+      "feedback": "THM stands for Trihalomethanes, a group of chemical byproducts formed during chlorination of drinking water and wastewater."
+    },
+    {
+      "id": 20,
+      "question": "What does RO stand for?",
+      "choices": [
+        { "id": "a", "text": "Reverse Osmosis" },
+        { "id": "b", "text": "Recycled Organics" },
+        { "id": "c", "text": "Retained Oxygen" },
+        { "id": "d", "text": "Resistant Output" }
+      ],
+      "answerId": "a",
+      "feedback": "RO stands for Reverse Osmosis, a water purification process that uses a semi-permeable membrane to remove contaminants."
+    },
+    {
+      "id": 21,
+      "question": "What does CSO stand for?",
+      "choices": [
+        { "id": "a", "text": "Combined Sewer Overflow" },
+        { "id": "b", "text": "Chemical Sludge Outlet" },
+        { "id": "c", "text": "Carbon Solids Overflow" },
+        { "id": "d", "text": "Clarified Solids Operation" }
+      ],
+      "answerId": "a",
+      "feedback": "CSO stands for Combined Sewer Overflow, which occurs when combined stormwater and sewage systems exceed capacity and discharge untreated water."
+    },
+    {
+      "id": 22,
+      "question": "What does SBR stand for?",
+      "choices": [
+        { "id": "a", "text": "Sludge Bio Reactor" },
+        { "id": "b", "text": "Sequencing Batch Reactor" },
+        { "id": "c", "text": "Sediment Backwash Recovery" },
+        { "id": "d", "text": "Suspended Bio Recycle" }
+      ],
+      "answerId": "b",
+      "feedback": "SBR stands for Sequencing Batch Reactor, a type of activated sludge process where treatment occurs in timed cycles in a single tank."
+    },
+    {
+      "id": 23,
+      "question": "What does MBR stand for?",
+      "choices": [
+        { "id": "a", "text": "Membrane Bio Reactor" },
+        { "id": "b", "text": "Mechanical Biosolids Recovery" },
+        { "id": "c", "text": "Mixed Basin Reactor" },
+        { "id": "d", "text": "Mass Balance Recycle" }
+      ],
+      "answerId": "a",
+      "feedback": "MBR stands for Membrane Bioreactor, a wastewater treatment process that combines biological treatment with membrane filtration."
+    },
+    {
+      "id": 24,
+      "question": "What does GPD stand for?",
+      "choices": [
+        { "id": "a", "text": "Gallons per Drum" },
+        { "id": "b", "text": "Gallons per Day" },
+        { "id": "c", "text": "Grams per Density" },
+        { "id": "d", "text": "Gas Processed Daily" }
+      ],
+      "answerId": "b",
+      "feedback": "GPD stands for Gallons Per Day, a common unit for measuring flow rates in wastewater systems."
+    },
+    {
+      "id": 25,
+      "question": "What does TDS stand for?",
+      "choices": [
+        { "id": "a", "text": "Total Dissolved Solids" },
+        { "id": "b", "text": "Thermal Discharge Solids" },
+        { "id": "c", "text": "Treated Dispersed Solids" },
+        { "id": "d", "text": "Total Density Sediment" }
+      ],
+      "answerId": "a",
+      "feedback": "TDS stands for Total Dissolved Solids, referring to all inorganic and organic substances dissolved in water."
+    },
+    {
+      "id": 26,
+      "question": "What does MCRT stand for?",
+      "choices": [
+        { "id": "a", "text": "Mean Cell Residence Time" },
+        { "id": "b", "text": "Maximum Clarifier Retention Time" },
+        { "id": "c", "text": "Mixed Cell Return Transport" },
+        { "id": "d", "text": "Microbial Clarification Retention Time" }
+      ],
+      "answerId": "a",
+      "feedback": "MCRT stands for Mean Cell Residence Time, the average time that activated sludge solids stay in the system."
+    },
+    {
+      "id": 27,
+      "question": "What does SOP stand for?",
+      "choices": [
+        { "id": "a", "text": "Sludge Output Process" },
+        { "id": "b", "text": "Standard Operating Procedure" },
+        { "id": "c", "text": "System Overflow Protection" },
+        { "id": "d", "text": "Solids Operation Planning" }
+      ],
+      "answerId": "b",
+      "feedback": "SOP stands for Standard Operating Procedure, which outlines consistent, safe procedures for operations and maintenance tasks."
+    },
+    {
+      "id": 28,
+      "question": "What does PPE stand for?",
+      "choices": [
+        { "id": "a", "text": "Process Protection Equipment" },
+        { "id": "b", "text": "Personal Protective Equipment" },
+        { "id": "c", "text": "Physical Plant Efficiency" },
+        { "id": "d", "text": "Pumping Process Evaluation" }
+      ],
+      "answerId": "b",
+      "feedback": "PPE stands for Personal Protective Equipment, used to protect workers from health and safety hazards on the job."
+    },
+    {
+      "id": 29,
+      "question": "What does I&I stand for in wastewater?",
+      "choices": [
+        { "id": "a", "text": "Influent and Intermittents" },
+        { "id": "b", "text": "Industrial Input" },
+        { "id": "c", "text": "Inflow and Infiltration" },
+        { "id": "d", "text": "Inlet and Injection" }
+      ],
+      "answerId": "c",
+      "feedback": "I&I stands for Inflow and Infiltration, which refers to stormwater or groundwater entering a sewer system, increasing flow and treatment demand."
+    },
+    {
+      "id": 30,
+      "question": "What does NPDES stand for?",
+      "choices": [
+        { "id": "a", "text": "National Pollutant Discharge Elimination System" },
+        { "id": "b", "text": "New Pollutant Disposal and Evaluation Standards" },
+        { "id": "c", "text": "National Permit for Discharge of Environmental Substances" },
+        { "id": "d", "text": "Non-Potable Discharge Environmental System" }
+      ],
+      "answerId": "a",
+      "feedback": "NPDES stands for National Pollutant Discharge Elimination System, a permit program that controls water pollution by regulating point sources."
+    }
+  ]
+}
