@@ -106,7 +106,7 @@
         { "id": "c", "text": "Packing seal" },
         { "id": "d", "text": "Mechanical seal" }
       ],
-      "answerId": "",
+      "answerId": "b",
       "feedback": ""
     }
   ]
