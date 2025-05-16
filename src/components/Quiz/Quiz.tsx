@@ -5,7 +5,7 @@ import { loadQuiz } from "@/utils/quizLoader"
 
 type Choice = { id: string, text: string }
 
-type Question = {question: string, answerId: string, feedback: string, choices: Choice[] }
+type Question = {id: number, question: string, answerId: string, feedback: string, choices: Choice[] }
 
 function shuffleArray<T>(array: T[]): T[] {
   return [...array].sort(() => Math.random() - 0.5)
@@ -60,6 +60,7 @@ export default function Quiz() {
       setAnswers(prev => [
         ...prev,
         {
+          id: currentQuestion.id,
           question: currentQuestion.question,
           selected: selectedChoice!,
           correct: currentQuestion.answerId,
@@ -245,6 +246,7 @@ export default function Quiz() {
                     answers,
                     score,
                     total: shuffledQuestions.length,
+                    shuffledQuestions
                   }}
                 >
                   Summary
