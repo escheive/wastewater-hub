@@ -10,7 +10,13 @@ export default function NavBar() {
           <Link to="/">Home</Link>
         </Button>
         <Button asChild variant="ghost">
+          <Link to="/learning">Learning</Link>
+        </Button>
+        <Button asChild variant="ghost">
           <Link to="/quizzes">Quizzes</Link>
+        </Button>
+        <Button asChild variant="ghost">
+          <Link to="/resources">Resources</Link>
         </Button>
       </div>
     </nav>

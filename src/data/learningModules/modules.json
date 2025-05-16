@@ -1,0 +1,44 @@
+[
+  {
+    "id": "intro",
+    "title": "Introduction to Wastewater",
+    "description": "Learn what wastewater is and why treatment is essential.",
+    "thumbnail": "/images/intro.jpg"
+  },
+  {
+    "id": "treatment-overview",
+    "title": "Wastewater Treatment Overview",
+    "description": "Understand the major steps in treating wastewater.",
+    "thumbnail": "/images/treatment.jpg"
+  },
+  {
+    "id": "key-terms",
+    "title": "Key Terminology & Acronyms",
+    "description": "Master the vocabulary used in the industry.",
+    "thumbnail": "/images/terms.jpg"
+  },
+  {
+    "id": "microbiology",
+    "title": "Microbiology in Wastewater",
+    "description": "Learn in depth about the biological treatment of wastewater.",
+    "thumbnail": "/images/microbiology.jpg"
+  },
+  {
+    "id": "math",
+    "title": "Math for Wastewater Operators",
+    "description": "Learn the math used for Wastewater and how it affects the process.",
+    "thumbnail": "/images/math.jpg"
+  },
+  {
+    "id": "equipment",
+    "title": "Equipment Identification",
+    "description": "Learn the common equipment used in wastewater.",
+    "thumbnail": "/images/equipment.jpg"
+  },
+  {
+    "id": "troubleshooting",
+    "title": "Troubleshooting",
+    "description": "Learn how to troubleshoot common challenges in a wastewater plant that you'll face as an operator.",
+    "thumbnail": "/images/troubleshooting.jpg"
+  }
+]
