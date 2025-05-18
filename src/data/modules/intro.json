@@ -1,0 +1,108 @@
+{
+  "id": "wastewater-overview",
+  "title": "Wastewater Treatment Overview",
+  "level": "Grade 1",
+  "sections": [
+    {
+      "title": "What Is Wastewater?",
+      "content": "Wastewater is water that has been used in homes, businesses, or industries and contains contaminants such as human waste, food particles, soaps, oils, and chemicals.",
+      "bullets": [
+        "Domestic (toilets, showers, sinks)",
+        "Industrial processes",
+        "Stormwater runoff"
+      ]
+    },
+    {
+      "title": "Why Treat Wastewater?",
+      "bullets": [
+        "Protect public health by removing pathogens",
+        "Prevent pollution in rivers, lakes, and oceans",
+        "Comply with environmental regulations",
+        "Recover resources (e.g., water reuse, biosolids, energy)"
+      ]
+    },
+    {
+      "title": "What even is Wastewater Treatment?",
+      "content": "Wastewater treatment is speeding up the natural purification of water. Bacteria and other organisms naturally consume food sources and waste in water. Due to the sheer amount of waste we produce, we built treatment plants to speed up that natural process instead of overloading our waterways. After speeding up the natural process, most wastewater plants will disinfect the water to cleanse it of any harmful microorganisms before discharging the water."
+    },
+    {
+      "title": "Major Stages of Wastewater Treatment",
+      "subsections": [
+        {
+          "title": "Preliminary Treatment",
+          "content": "Removes large debris that can damage equipment or clog systems. This stage is largely focused on protecting the plant.",
+          "bullets": [
+            "Bar Screens – remove large objects like rags or sticks that can cause damage to pumps when sucked in.",
+            "Grit Chambers – settle out sand, gravel, and other heavy particles. These inorganic particles can damage equipment and settle in tanks, taking up valuable space."
+          ]
+        },
+        {
+          "title": "Primary Treatment",
+          "content": "Settles out solids by gravity in large tanks. The goal here is to have floatable solids skimmed off the top of the water and settleable solids scraped out the bottom of the tank, leaving ",
+          "bullets": [
+            "Primary Clarifiers – remove ~50–60% of suspended solids and some BOD"
+          ]
+        },
+        {
+          "title": "Secondary Treatment",
+          "content": "Uses biological processes to remove organic matter.",
+          "bullets": [
+            "Activated Sludge Process – microorganisms break down organic material in aeration tanks",
+            "Trickling Filters – fixed-bed systems that support microbial growth",
+            "Secondary Clarifiers – separate treated water from biological solids"
+          ]
+        },
+        {
+          "title": "Tertiary (Advanced) Treatment",
+          "content": "Removes remaining nutrients, solids, or pathogens.",
+          "bullets": [
+            "Filtration – sand or membrane filters",
+            "Nutrient Removal – nitrification/denitrification, phosphorus precipitation",
+            "Disinfection – chlorine, UV, or ozone to kill pathogens before discharge"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Solids Handling",
+      "content": "Solids from treatment are processed further:",
+      "bullets": [
+        "Thickening – concentrates sludge",
+        "Digestion – stabilizes organic material (aerobic or anaerobic)",
+        "Dewatering – removes water (e.g., belt presses)",
+        "Disposal or reuse – landfill, composting, or land application"
+      ]
+    },
+    {
+      "title": "Key Parameters Operators Must Monitor",
+      "bullets": [
+        "BOD – how much oxygen microbes need to break down organics",
+        "TSS (Total Suspended Solids) – solid particles in water",
+        "pH – acidity/alkalinity",
+        "DO (Dissolved Oxygen) – vital for biological treatment",
+        "Flow rate – affects detention time and treatment performance",
+        "Chlorine residual – for disinfection effectiveness"
+      ]
+    },
+    {
+      "title": "Operator Responsibilities",
+      "bullets": [
+        "Monitor and adjust equipment",
+        "Perform laboratory tests and record results",
+        "Maintain safe and clean facilities",
+        "Understand safety procedures and emergency protocols",
+        "Stay compliant with regulatory permits"
+      ]
+    },
+    {
+      "title": "Study Tips for Grade 1 Operators",
+      "bullets": [
+        "Know definitions and functions of equipment",
+        "Understand basic math and lab calculations (e.g., flow, loading rates)",
+        "Memorize treatment stages and what each removes",
+        "Review safety and chemical handling procedures",
+        "Take practice tests and review your state’s certification guide"
+      ]
+    }
+  ]
+}

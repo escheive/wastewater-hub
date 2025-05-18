@@ -1,10 +1,31 @@
 import { useParams } from "react-router-dom"
-import modulesIndex from "@/data/learningModules/modules.json"
+import { useState, useEffect } from "react"
+import { loadModuleContent } from "@/utils/modulesLoader"
+import { ModuleSection } from "@/components/modules/ModuleSection"
 
 
 export default function ModulePage() {
   const { moduleId } = useParams()
-  const module = modulesIndex.find((m) => m.id === moduleId)
+  const [module, setModule] = useState<any | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchModule = async () => {
+      try {
+        const data = await loadModuleContent(moduleId)
+        setModule(data)
+      } catch (err) {
+        console.error('Error loading module:', err)
+        setModule(null)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchModule()
+  }, [moduleId])
+
+  if (loading) return <div>Loading...</div>
 
   if (!module) {
     return (
@@ -15,22 +36,14 @@ export default function ModulePage() {
     )
   }
 
-  const isAvailable = module.available !== false
-
   return (
-    <div className="p-8 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4">{module.title}</h1>
-      <p className="text-gray-600 mb-6">{module.description}</p>
+    <div className="p-8 max-w-4xl mx-auto">
+      <h1 className="text-3xl font-bold mb-2">{module.title}</h1>
+      <p className="text-sm text-gray-500 mb-6">Level: {module.level}</p>
 
-      {isAvailable ? (
-        <div>
-          <p>🚧 Module content will go here.</p>
-        </div>
-      ) : (
-        <div className="text-center text-xl text-gray-500 mt-10">
-          🚧 This module is coming soon!
-        </div>
-      )}
+      {module.sections.map((section: any, index: number) => (
+        <ModuleSection key={index} section={section} />
+      ))}
     </div>
   )
 }
