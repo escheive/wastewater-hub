@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from '@/pages/Home'
 import Learning from '@/pages/Learning'
+import ModulePage from './pages/ModulePage'
 import QuizPage from '@/pages/QuizPage'
 import QuizSelection from '@/pages/QuizSelection'
 import QuizSummary from '@/pages/QuizSummary'
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/learning' element={<Learning />} />
+          <Route path='/modules/:moduleId' element={<ModulePage />} />
           <Route path='/quizzes' element={<QuizSelection />} />
           <Route path='/quiz/:quizId' element={<QuizPage />} />
           <Route path='quiz/summary' element={<QuizSummary />} />
