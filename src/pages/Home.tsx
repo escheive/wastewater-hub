@@ -16,7 +16,7 @@ export default function Home() {
           title="Learning"
           description="Read through detailed modules and prep guides for operator exams."
           to="/learning"
-          bg="bg-green-100"
+          theme="green"
         />
 
         <PortalCard
@@ -24,7 +24,7 @@ export default function Home() {
           title="Quizzes"
           description="Test your knowledge with dynamic quizzes for every skill level."
           to="/quizzes"
-          bg="bg-stone-100"
+          theme="stone"
         />
 
         <PortalCard
@@ -32,30 +32,30 @@ export default function Home() {
           title="Resources"
           description="Access downloadable PDFs, conversion charts, formulas and more."
           to="/resources"
-          bg="bg-amber-100"
+          theme="amber"
         />
       </div>
     </main>
   )
 }
 
-function PortalCard({ icon, title, description, to, bg }: {
+function PortalCard({ icon, title, description, to, theme }: {
   icon: React.ReactNode
   title: string
   description: string
   to: string
-  bg: string
+  theme: string
 }) {
   return (
     <Link
       to={to}
-      className={`rounded-2xl p-6 ${bg} hover:shadow-lg transition-shadow border border-gray-200 flex flex-col gap-3`}
+      className={`rounded-2xl p-6 bg-${theme}-100 hover:shadow-lg transition-shadow border border-gray-200 flex flex-col gap-3`}
     >
       <div className="flex items-center gap-3">
         {icon}
-        <h2 className="text-xl font-semibold text-deepBrown">{title}</h2>
+        <h2 className={`text-xl font-semibold text-${theme}-700`}>{title}</h2>
       </div>
-      <p className="text-sm text-stone-700">{description}</p>
+      <p className="text-md text-stone-700">{description}</p>
     </Link>
   )
 }
