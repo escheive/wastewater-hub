@@ -1,10 +1,12 @@
 // components/ModuleSection.tsx
 import { ModuleSubsection } from "./ModuleSubsection"
+import { BlockMath, InlineMath } from 'react-katex'
 
 interface SectionProps {
   section: {
     title: string
     content?: string
+    formula?: string
     bullets?: string[]
     subsections?: {
       title: string
@@ -18,6 +20,10 @@ export const ModuleSection = ({ section }: SectionProps) => {
   return (
     <div className="mb-8">
       <h2 className="text-2xl font-semibold mb-2 text-green-800">{section.title}</h2>
+
+      {section.formula && (
+        <BlockMath math={section.formula} />
+      )}
 
       {section.content && <p className="text-xl text-stone-800 mb-2">{section.content}</p>}
 
