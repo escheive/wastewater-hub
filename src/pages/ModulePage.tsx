@@ -41,7 +41,7 @@ export default function ModulePage() {
       <h1 className="text-3xl font-bold mb-2">{module.title}</h1>
       <p className="text-sm text-gray-500 mb-6">Level: {module.level}</p>
 
-      {module.sections.map((section: any, index: number) => (
+      {module.sections && module.sections.map((section: any, index: number) => (
         <ModuleSection key={index} section={section} />
       ))}
     </div>
