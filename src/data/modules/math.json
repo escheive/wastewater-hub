@@ -1,5 +1,20 @@
 {
   "id": "math",
   "title": "Math",
-  "level": "Grade 1"
+  "level": "Grade 1",
+  "sections": [
+    {
+      "title": "Why is math useful in wastewater?",
+      "content": "Math is used daily in wastewater operations to calculate things like flow rates, chemical dosing, and detention times."
+    },
+    {
+      "title": "Detention Time",
+      "content": "Detention time is the length of time a drop of water will stay in a tank on average. Think of it as the time it takes to fill a given tank. The time from the first drop of water entering to the moment that first drop of water would spill out. Detention time is used for:",
+      "bullets": [
+        "Sedimentation tanks/Clarifiers: These tanks settle solids using gravity. It is important for the wastewater to spend enough time in these tanks for gravity to fully accomplish sedimentation. Typical detention time of ~ 2 hours.",
+        "Aeration tanks: Microorganisms consume organic matter in the wastewater. It is important for the microorganisms to have enough time to consume an appropriate amount of bio matter. It is also important to have a detention time long enough so that you aren't washing out your microorganisms too fast. Typical detention time is ~ 4-8 hours.",
+        "Disinfection: Contact time between the chemicals and wastewater is important to kill off pathogens."
+      ]
+    }
+  ]
 }
