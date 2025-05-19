@@ -4,6 +4,7 @@
     "title": "Introduction to Wastewater",
     "description": "Learn what wastewater is and why treatment is essential.",
     "thumbnail": "/images/intro.jpg",
+    "theme": "stone",
     "available": false
   },
   {
@@ -11,6 +12,7 @@
     "title": "Wastewater Treatment Overview",
     "description": "Understand the major steps in treating wastewater.",
     "thumbnail": "/images/treatment.jpg",
+    "theme": "indigo",
     "available": false
   },
   {
@@ -18,6 +20,7 @@
     "title": "Key Terminology & Acronyms",
     "description": "Master the vocabulary used in the industry.",
     "thumbnail": "/images/terms.jpg",
+    "theme": "cyan",
     "available": false
   },
   {
@@ -25,6 +28,7 @@
     "title": "Microbiology in Wastewater",
     "description": "Learn in depth about the biological treatment of wastewater.",
     "thumbnail": "/images/microbiology.jpg",
+    "theme": "green",
     "available": false
   },
   {
@@ -32,6 +36,7 @@
     "title": "Math for Wastewater Operators",
     "description": "Learn the math used for Wastewater and how it affects the process.",
     "thumbnail": "/images/math.jpg",
+    "theme": "rose",
     "available": false
   },
   {
@@ -39,6 +44,7 @@
     "title": "Equipment Identification",
     "description": "Learn the common equipment used in wastewater.",
     "thumbnail": "/images/equipment.jpg",
+    "theme": "amber",
     "available": false
   },
   {
@@ -46,6 +52,7 @@
     "title": "Troubleshooting",
     "description": "Learn how to troubleshoot common challenges in a wastewater plant that you'll face as an operator.",
     "thumbnail": "/images/troubleshooting.jpg",
+    "theme": "fuchsia",
     "available": false
   }
 ]

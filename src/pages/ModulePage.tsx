@@ -37,7 +37,7 @@ export default function ModulePage() {
   }
 
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="p-8 mx-auto">
       <h1 className="text-3xl font-bold mb-2">{module.title}</h1>
       <p className="text-sm text-gray-500 mb-6">Level: {module.level}</p>
 
