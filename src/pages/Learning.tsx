@@ -2,6 +2,13 @@ import modulesIndex from "@/data/modules/modules.json"
 import { PortalCard } from "@/components/ui/portalCard"
 import { FolderOpen } from "lucide-react"
 
+type ThemeColor =
+  | "red" | "orange" | "amber" | "yellow"
+  | "lime" | "green" | "emerald" | "teal"
+  | "cyan" | "sky" | "blue" | "indigo"
+  | "violet" | "purple" | "fuchsia" | "pink"
+  | "rose" | "slate" | "gray" | "zinc" | "neutral"
+
 export default function Learning() {
   return (
     <div className="p-8 mx-auto">
@@ -16,7 +23,7 @@ export default function Learning() {
             title={module.title}
             description={module.description}
             to={`/modules/${module.id}`}
-            theme={module.theme}
+            theme={module.theme as ThemeColor}
           />
         ))}
       </div>
