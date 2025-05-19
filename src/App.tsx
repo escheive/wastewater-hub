@@ -13,9 +13,6 @@ import './App.css'
 function App() {
 
   return (
-    // <div className="flex flex-col min-h-screen min-w-screen" style={{ backgroundColor: '#F5F5DC'}}>
-    // <div className="flex flex-col min-h-screen min-w-screen" style={{ backgroundColor: '#DCE4C9'}}>
-    // <div className="flex flex-col min-h-screen min-w-screen" style={{ backgroundColor: '#B6A28E'}}>
     <div className="flex flex-col min-h-screen min-w-screen" style={{ backgroundColor: '#FEFAE0'}}>
       <NavBar />
       <main className="flex-grow p-6 mx-auto">

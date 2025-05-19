@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Link, useParams } from 'react-router-dom'
 import { loadQuiz } from "@/utils/quizLoader"
+import { MyButton } from "../ui/MyButton"
 
 type Choice = { id: string, text: string }
 
@@ -125,28 +126,28 @@ export default function Quiz() {
   }
 
   return (
-    <div className="flex gap-6">
+    <div className="flex">
       {/* Legend Sidebar */}
-      <div className="justify-center fixed left-0 top-16 bottom-16 w-56 space-y-2 overflow-y-auto bg-white p-4">
+      <div className="fixed left-0 top-13 bottom-16 w-56 space-y-2 overflow-y-auto bg-[#5F6F52] p-4">
         {shuffledQuestions.map((_, qIndex) => {
           const answer = answers[qIndex]
           const gotItRight = answer && answer.selected === answer.correct
           const gotItWrong = answer && answer.selected !== answer.correct
 
           return (
-            <Button
+            <MyButton
               key={qIndex}
-              variant="outline"
+              variant="default"
               className={`w-full justify-start text-sm
-                ${!answer ? '!bg-gray-100' : ''}
+                ${!answer ? '!bg-[#FEFAE0]' : ''}
                 ${gotItRight ? '!bg-green-100' : ''}
                 ${gotItWrong ? '!bg-red-100' : ''}
-                ${index === qIndex ? '!border-blue-500 !font-semibold' : ''}       
+                ${index === qIndex ? '!border-[#FEFAE0] !font-semibold' : ''}       
               `}
               onClick={() => handleNav(qIndex)}
             >
               Q{qIndex + 1} {answers[qIndex] ? '✔️' : ''}
-            </Button>
+            </MyButton>
           );
         })}
       </div>
@@ -165,7 +166,7 @@ export default function Quiz() {
             const isIncorrectSelected = navAnswer && choice.id === navAnswer.selected && navAnswer.selected !== navAnswer.correct
 
             return (
-              <Button
+              <MyButton
                 key={choice.id}
                 className={`mt-1 text-black border-2
                   ${isAnswered && choice.id === navAnswer.correct ? '!bg-green-100' : ''}
@@ -173,20 +174,13 @@ export default function Quiz() {
                 `}
                 onClick={() => !isAnswered && setSelectedChoice(choice.id)}
                 disabled={isAnswered}
+                variant="default"
               >
                 {choice.text}
-              </Button>
+              </MyButton>
             )
           })}
         </div>
-
-        <Button 
-          className={`mt-4 bg-green-600 text-black hover:bg-green-700 disabled:opacity-50`}
-          onClick={handleSubmit} 
-          disabled={!selectedChoice || isAnswered}
-        >
-          Submit
-        </Button>
 
         {isCorrect && (
           <div className="mt-2 text-green-700">
@@ -204,30 +198,45 @@ export default function Quiz() {
           <p className="mt-1 text-sm text-gray-700">{currentQuestion.feedback}</p>
         )}
 
-        <div className="flex justify-between mt-4">
-          <Button 
+        <div className="flex justify-between items-center mt-4 border-t pt-6">
+          {/* Previous Button */}
+          <MyButton 
               onClick={() => handleNav(index - 1)} 
               disabled={index === 0}
-              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+              className="mt-1"
+              variant="moss"
             >
               Previous
-            </Button>
+            </MyButton>
 
-            <Button 
+            <MyButton 
               onClick={() => handleNav(index + 1)}
               disabled={index === shuffledQuestions.length - 1}
-              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+              className="mt-1"
+              variant="moss"
             >
               Next
-            </Button>
+            </MyButton>
 
-            <Button
-              className="mt-1 bg-green-600 text-black hover:bg-green-700"
+            <MyButton
+              className="mt-1"
               onClick={handleFinishQuiz}
+              variant="moss"
             >
               Finish Quiz
-            </Button>
+            </MyButton>
         </div>
+
+        {selectedChoice && (
+          <MyButton 
+            className={`mt-4  disabled:opacity-50`}
+            onClick={handleSubmit} 
+            disabled={!selectedChoice || isAnswered}
+            variant="moss"
+          >
+            Submit
+          </MyButton>
+        )}
       </div>
 
       {showFinalModal && (

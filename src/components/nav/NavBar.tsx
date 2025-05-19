@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function NavBar() {
   return (
-    <nav className="w-full border-b shadow-sm px-4 py-3 flex items-center justify-between" style={{ backgroundColor: '#A9B388' }}>
+    <nav className="w-full shadow-sm px-4 py-3 flex items-center justify-between h-14 z-100" style={{ backgroundColor: '#A9B388' }}>
       <Link to="/" className="text-xl font-bold tracking-tight !text-stone-700">Wastewater Hub</Link>
       <div className="space-x-2">
         <Button asChild variant="ghost" className="!text-stone-700">
